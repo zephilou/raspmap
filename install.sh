@@ -106,5 +106,5 @@ cat $RESULTSFILE | mail -s "RaspMap map installed" -a "MIME-Version: 1.0" -a "Co
 ###  Launch
 ############################################
 
-/etc/init.d/raspmap.sh start
+#/etc/init.d/raspmap.sh start
 

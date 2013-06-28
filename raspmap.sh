@@ -18,11 +18,26 @@ echo -e "
 echo -e "<b>RaspMap </b>: ".`date`."<br />" >>$RESULTSFILE
 echo "<b>Admimail </b> : $EMAIL  <br />"  >>$RESULTSFILE
 echo "<b>Public ip </b> of installer is : $PUBLICIP"."<br />" >> $RESULTSFILE
+echo "<hr>" >>$RESULTSFILE;
 echo "<b>Local network  </b>:<br /><br />" >> $RESULTSFILE
 ifconfig >> $RESULTSFILE
 echo "<br /><br /><b>Network to scan </b>  : <br />" >>$RESULTSFILE
 ip addr show | grep inet | grep -v 127.0.0.1 | sed -n '/inet/,/brd/p' | awk -F 'inet' '{print $2}'  | awk -F ' ' '{print $1}' >>$RESULTSFILE
 ip addr show | grep inet | grep -v 127.0.0.1 | sed -n '/inet/,/brd/p' | awk -F 'inet' '{print $2}'  | awk -F ' ' '{print $1}'  > $NETSCANFILE
+echo "<hr>" >>$RESULTSFILE;
+
+echo "<br /><br /><b>Bluetooth check</b>  : <br />" >>$RESULTSFILE
+hciconfig >>$RESULTSFILE
+
+echo "<br /><br /><b>Bluetooth scan</b>  : <br />" >>$RESULTSFILE
+hcitool scan >>$RESULTSFILE
+echo "<hr>" >>$RESULTSFILE;
+echo "<br /><br /><b>Wifi check</b>  : <br />" >>$RESULTSFILE
+iwconfig >>$RESULTSFILE
+
+echo "<br /><br /><b>Wifi scan</b>  : <br />" >>$RESULTSFILE
+iwlist wlan0 scan | grep 'Cell\|Frequency\|Quality\|ESSID' | sed 's/Cell/Cell<br \/>/g' >>$RESULTSFILE
+echo "<hr>" >>$RESULTSFILE;
 
 echo "<br /><br /><b>Mtr to google </b>  : <br />" >>$RESULTSFILE
 
@@ -31,6 +46,8 @@ echo "<br /><br />" >>$RESULTSFILE
 mtr -r -c 1  8.8.8.8 | sed 's/^[0-9]\.\|--/<br \/>/g'>>$RESULTSFILE
 
 echo "<br /><br />" >>$RESULTSFILE
+
+echo "<hr>" >>$RESULTSFILE;
 
 echo "</body>" >>$RESULTSFILE
 while read line ;do
