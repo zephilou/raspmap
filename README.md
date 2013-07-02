@@ -4,12 +4,12 @@ RaspMap
 * Description 
 
 RaspMap gather network information on raspbian and report by email
-	ifconfig
-	get network to scan
-	scan bluetooth
-	scan Wifi AP
-	mtr to google dns
-	nmap available network
+	** ifconfig
+	** get network to scan
+	** scan bluetooth
+	** scan Wifi AP
+	** mtr to google dns
+	** nmap available network
 
 * Installation 
 
