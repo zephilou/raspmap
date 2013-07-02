@@ -3,8 +3,13 @@ RaspMap
 
 * Description 
 
-RaspMap gather network information on raspbian.
-Plug the cable and boot ... the email will be sent.
+RaspMap gather network information on raspbian and report by email
+- ifconfig
+- get network to scan
+- scan bluetooth
+- scan Wifi AP
+- mtr to google dns
+- nmap available network
 
 * Installation 
 
@@ -12,4 +17,4 @@ Plug the cable and boot ... the email will be sent.
 
 * Usage 
 
-reboot
+Plug the cable and boot ... the email will be sent.
