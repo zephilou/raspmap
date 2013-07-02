@@ -56,6 +56,15 @@ else
         apt-get install mtr
 fi
 
+if [[ -f /usr/bin/nbtscan  ]]
+then
+        echo -e "${GREEN} nbtscan  ok ${NORMAL}";
+else
+        echo -e "${RED}  nbtscan not here ${NORMAL}";
+        echo -e "${GREEN} Trying to install  ${NORMAL}";
+        apt-get install nbtscan
+fi
+
 ############################################
 ###  Testing email 
 ############################################

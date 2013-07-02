@@ -10,6 +10,7 @@ RaspMap gather network information on raspbian and report by email
 - scan Wifi AP
 - mtr to google dns
 - nmap available network
+- nbtscan for gethostnamebyip
 
 Installation 
 ---
