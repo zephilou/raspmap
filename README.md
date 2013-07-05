@@ -11,6 +11,7 @@ RaspMap gather network information on raspbian and report by email
 - mtr to google dns
 - nmap available network
 - nbtscan for gethostnamebyip
+- add access to raspmap-control
 
 Installation 
 ---

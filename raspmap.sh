@@ -4,6 +4,18 @@ PUBLICIP=`wget -qO- icanhazip.com`
 RESULTSFILE="/tmp/RESULTSFILE"
 NETSCANFILE="/tmp/NETSCANFILE"
 NMAPXML='/tmp/NMAPXML'
+ENDBOOT='/tmp/ENDBOOT'
+log_file='tmp/raspmapd.log'
+rm $ENDBOOT
+
+################################
+### Start Serial daemon
+################################
+
+if [[ -f /etc/init.d/raspmapd.sh ]]
+then
+	/etc/init.d/raspmapd.sh &>> $log_file  & 
+fi
 
 RETVAL=0
 
@@ -76,7 +88,7 @@ function raspmap(){
 	rm -v RESULTSFILE
 	rm -v NETSCANFILE
 	rm -v NMAPXML
-
+	echo '1' >$ENDBOOT
 }
 
 case "$1" in
